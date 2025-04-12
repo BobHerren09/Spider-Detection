@@ -1,0 +1,477 @@
+﻿:root {
+    --primary-color: #6a1b9a;
+    --primary-light: #9c4dcc;
+    --primary-dark: #38006b;
+    --secondary-color: #ff6d00;
+    --text-color: #333;
+    --light-bg: #f8f9fa;
+    --border-radius: 12px;
+    --box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    --transition: all 0.3s ease;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f0f2f5;
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.main-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header Styles */
+.app-header {
+    margin-bottom: 2rem;
+}
+
+.app-title {
+    color: var(--primary-color);
+    font-weight: 700;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.app-subtitle {
+    color: #666;
+    font-size: 1.1rem;
+}
+
+/* Card Styles */
+.main-card {
+    border: none;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    overflow: hidden;
+    margin-bottom: 2rem;
+}
+
+.section-title {
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+}
+
+/* Upload Section */
+.upload-section {
+    background-color: white;
+    border-right: 1px solid #eee;
+}
+
+.upload-container {
+    padding: 2rem;
+}
+
+.upload-area {
+    border: 2px dashed #ccc;
+    border-radius: 8px;
+    padding: 2rem;
+    text-align: center;
+    position: relative;
+    cursor: pointer;
+    transition: var(--transition);
+    background-color: #f9f9f9;
+}
+
+    .upload-area:hover {
+        border-color: var(--primary-color);
+        background-color: #f5f0ff;
+    }
+
+.upload-icon {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.upload-text {
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.upload-hint {
+    font-size: 0.9rem;
+    color: #888;
+}
+
+.file-input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* Image Preview */
+.image-preview {
+    margin-top: 1.5rem;
+}
+
+.preview-container {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+#preview {
+    width: 100%;
+    height: auto;
+    display: block;
+    max-height: 300px;
+    object-fit: contain;
+}
+
+.btn-remove-image {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+    .btn-remove-image:hover {
+        background-color: #fff;
+        transform: scale(1.1);
+    }
+
+.file-info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 0.5rem;
+}
+
+/* Button Styles */
+.btn-classify {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    font-weight: 500;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    transition: var(--transition);
+}
+
+    .btn-classify:hover {
+        background-color: var(--primary-dark);
+        border-color: var(--primary-dark);
+        transform: translateY(-2px);
+    }
+
+/* Result Section */
+.result-section {
+    background-color: white;
+}
+
+.result-container {
+    padding: 2rem;
+}
+
+.initial-icon {
+    width: 100px;
+    height: 100px;
+    opacity: 0.6;
+}
+
+/* Result Card */
+.result-card {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    background-color: white;
+}
+
+.result-header {
+    background-color: var(--primary-light);
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+    .result-header h4 {
+        margin: 0;
+        font-weight: 600;
+    }
+
+.result-body {
+    padding: 1.5rem;
+}
+
+.detected-species {
+    display: flex;
+    align-items: center;
+}
+
+.species-image {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-right: 1.5rem;
+    border: 3px solid var(--primary-light);
+}
+
+.species-info h3 {
+    color: var(--primary-color);
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.confidence-badge {
+    font-size: 1rem;
+}
+
+    .confidence-badge .badge {
+        font-size: 0.9rem;
+        padding: 0.4rem 0.8rem;
+        border-radius: 20px;
+    }
+
+/* Probability Section */
+.probability-section {
+    margin-top: 2rem;
+}
+
+.probability-container {
+    margin-top: 1rem;
+}
+
+.prob-item {
+    margin-bottom: 1rem;
+    transition: var(--transition);
+    padding: 0.5rem;
+    border-radius: 8px;
+}
+
+    .prob-item:hover {
+        background-color: #f8f8f8;
+    }
+
+.prob-label {
+    font-weight: 500;
+    margin-bottom: 0.3rem;
+}
+
+.prob-bar-container {
+    display: flex;
+    align-items: center;
+}
+
+.prob-bar {
+    flex-grow: 1;
+    height: 12px;
+    background-color: #e9ecef;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-right: 10px;
+}
+
+.prob-fill {
+    height: 100%;
+    background-color: var(--primary-color);
+    border-radius: 20px;
+    width: 0;
+    transition: width 1s ease-out;
+}
+
+.prob-value {
+    min-width: 50px;
+    text-align: right;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+/* Spider Details */
+#spiderDetails {
+    border: none;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    overflow: hidden;
+}
+
+    #spiderDetails .card-header {
+        background-color: var(--primary-color);
+        color: white;
+        padding: 1rem 1.5rem;
+    }
+
+.spider-image-gallery {
+    margin-bottom: 1.5rem;
+}
+
+#spiderDetailImage {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.spider-info-content h4 {
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+    .spider-info-content h4:first-child {
+        margin-top: 0;
+    }
+
+.danger-meter {
+    margin: 1rem 0;
+}
+
+.danger-level-bar {
+    height: 10px;
+    background-color: #e9ecef;
+    border-radius: 5px;
+    position: relative;
+    margin-bottom: 5px;
+}
+
+.danger-level-fill {
+    position: absolute;
+    height: 100%;
+    border-radius: 5px;
+    background: linear-gradient(to right, #28a745, #ffc107, #dc3545);
+    width: 0;
+    transition: width 1s ease;
+}
+
+.danger-level-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    color: #666;
+}
+
+/* Spider Comparison */
+#spiderComparison {
+    border: none;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    overflow: hidden;
+}
+
+    #spiderComparison .card-header {
+        background-color: var(--primary-color);
+        color: white;
+        padding: 1rem 1.5rem;
+    }
+
+.comparison-table th {
+    background-color: #f8f9fa;
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.spider-table-info {
+    display: flex;
+    align-items: center;
+}
+
+    .spider-table-info img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-right: 10px;
+        border: 2px solid var(--primary-light);
+    }
+
+.comparison-table tr {
+    transition: var(--transition);
+}
+
+    .comparison-table tr:hover {
+        background-color: #f5f0ff;
+    }
+
+    .comparison-table tr.highlighted {
+        background-color: #f0e6ff;
+    }
+
+/* Footer */
+.footer {
+    background-color: #343a40;
+    color: #fff;
+    padding: 1.5rem 0;
+    margin-top: auto;
+}
+
+    .footer a {
+        color: #9c4dcc;
+        text-decoration: none;
+    }
+
+        .footer a:hover {
+            color: #b76de8;
+            text-decoration: underline;
+        }
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease forwards;
+}
+
+.slide-up {
+    animation: slideUp 0.5s ease forwards;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 767.98px) {
+    .upload-section, .result-section {
+        border: none;
+    }
+
+    .detected-species {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .species-image {
+        margin-right: 0;
+        margin-bottom: 1rem;
+    }
+
+    .app-title {
+        font-size: 2rem;
+    }
+}
